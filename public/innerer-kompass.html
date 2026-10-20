@@ -882,14 +882,14 @@
             }
         }
 
-        // GEMINI API CALL WITH RETRY & FAST FALLBACK
-        async function callGeminiAPI(payload) {
+       // GEMINI API CALL WITH RETRY & FAST FALLBACK
+async function callGeminiAPI(payload) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 12000);
 
     try {
-        // Ruft dein sicheres Vercel-Backend auf statt Google direkt
-        const response = await fetch('/api/generate.js', {
+        // Standard-Endpunkt auf Vercel (ohne .js)
+        const response = await fetch('/api/generate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
@@ -903,8 +903,11 @@
 
         const result = await response.json();
         const textContent = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+        
         if (textContent) {
-            return JSON.parse(textContent);
+            // Entfernt evtl. von Gemini mitgelieferte ```json-Codeblöcke vor dem Parsen
+            const cleanJsonText = textContent.replace(/```json\s*|```/g, '').trim();
+            return JSON.parse(cleanJsonText);
         }
     } catch (e) {
         clearTimeout(timeoutId);
