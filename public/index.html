@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pfr. Manuel | Sinn, Lifestyle & Moderne Spiritualität</title>
+    
+    <!-- Meta-Tags für Social Media Sharing & SEO -->
+    <meta name="description" content="Moderne Perspektiven auf Glaube, Alltagsphilosophie und Kaffeekultur. Erhalte tägliche Impulse, digitale Segenssprüche und frische Lebensgedanken.">
+    <meta property="og:title" content="Pfr. Manuel | Sinn & Lifestyle">
+    <meta property="og:description" content="Glaube mitten im echten Leben – Entdecke interaktive Tools, Alltags-Impulses und moderne Spiritualität.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome CDN für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdfbf7',
+                            100: '#f7f1e5',
+                            200: '#ebdcc5',
+                            300: '#dbc09d',
+                            400: '#ca9e72',
+                            500: '#b8814d', // Haupt-Akzent (Warmes Gold/Amber)
+                            600: '#9b6339',
+                            700: '#7e4b2d',
+                            800: '#52311f',
+                            900: '#2b1a11', // Dunkles Holz/Slate
+                        },
+                        indigoAcc: {
+                            500: '#6366f1',
+                            600: '#4f46e5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Ergänzende benutzerdefinierte Styles & Animationen -->
+    <style>
+        /* Sanfter Glaskugel-Effekt (Glassmorphism) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-dark {
+            background: rgba(43, 26, 17, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sanfter fließender Hintergrundverlauf für das Haupt-Miniprogramm */
+        .gradient-canvas {
+            background: linear-gradient(135deg, #2b1a11 0%, #42291b 40%, #1e120c 100%);
+        }
+
+        /* Schimmernder Leuchteffekt */
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(184, 129, 77, 0.25);
+        }
+
+        /* Übergangs-Animationen für das Miniprogramm */
+        .fade-transition {
+            transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Benutzerdefinierte Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdfbf7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dbc09d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b8814d;
+        }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- ========================================================================= -->
+    <!-- 1. NAVIGATION / HEADER (Glassmorphism Sticky) -->
+    <!-- ========================================================================= -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-brand-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- HIER DEINEN NAMEN ODER LOGO ANPASSEN -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center font-serif text-xl font-bold shadow-md group-hover:bg-brand-600 transition-colors">
+                    P
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-bold tracking-tight text-brand-900 group-hover:text-brand-500 transition-colors">
+                        Pfarrer Manuel<span class="text-brand-500">.</span>
+                    </span>
+                    <span class="text-[10px] uppercase tracking-widest text-brand-600 font-semibold -mt-1">
+                        Sinn & Lifestyle
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigationslinks -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-800">
+                <a href="#impulse" class="hover:text-brand-500 transition-colors flex items-center space-x-1.5">
+                    <i class="fa-solid fa-sparkles text-xs text-brand-500"></i>
+                    <span>Segen-Generator</span>
+                </a>
+                <a href="#gadgets" class="hover:text-brand-500 transition-colors">Miniprogramme</a>
+                <a href="#lifestyle" class="hover:text-brand-500 transition-colors">Magazin & Stories</a>
+                <a href="#community" class="hover:text-brand-500 transition-colors">Frage-Box</a>
+                <a href="#about" class="hover:text-brand-500 transition-colors">Über Mich</a>
+            </nav>
+
+            <!-- Quick-Action Button & Mobile Hamburger Button -->
+            <div class="flex items-center space-x-4">
+                <a href="#impulse" class="hidden sm:inline-flex items-center space-x-2 bg-brand-900 text-brand-50 hover:bg-brand-500 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide uppercase transition-all shadow-sm hover:shadow-md">
+                    <i class="fa-solid fa-bolt text-brand-300"></i>
+                    <span>Impuls holen</span>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-brand-900 hover:text-brand-500 focus:outline-none" aria-label="Menü öffnen">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Navigation (Ausklappbar) -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-brand-200/60 bg-brand-50 px-6 py-6 space-y-4">
+            <a href="#impulse" onclick="toggleMobileMenu()" class="block font-medium text-brand-900 hover:text-brand-500 py-1">✨ Segen-Generator</a>
+            <a href="#gadgets" onclick="toggleMobileMenu()" class="block font-medium text-brand-900 hover:text-brand-500 py-1">⚡ Miniprogramme & Tools</a>
+            <a href="#lifestyle" onclick="toggleMobileMenu()" class="block font-medium text-brand-900 hover:text-brand-500 py-1">☕ Magazin & Lifestyle</a>
+            <a href="#community" onclick="toggleMobileMenu()" class="block font-medium text-brand-900 hover:text-brand-500 py-1">💬 Anonyme Frage-Box</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block font-medium text-brand-900 hover:text-brand-500 py-1">👨‍💼 Über Mich</a>
+            <div class="pt-2">
+                <a href="#impulse" onclick="toggleMobileMenu()" class="w-full text-center block bg-brand-500 text-white py-3 rounded-xl font-medium text-sm">
+                    Jetzt Impuls generieren
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ========================================================================= -->
+    <!-- 2. HERO SECTION -->
+    <!-- ========================================================================= -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Hero Text Spalte -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                
+                <!-- Badge -->
+                <div class="inline-flex items-center space-x-2 bg-brand-100 border border-brand-200/80 px-4 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-800">Sinn, Lifestyle & Moderne Spiritualität</span>
+                </div>
+
+                <!-- Hauptüberschrift (Anpassbar) -->
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.15] text-brand-900">
+                    Glaube mitten im <br class="hidden sm:inline">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-brand-600 to-brand-800 italic">
+                        echten Leben
+                    </span> verankert.
+                </h1>
+
+                <!-- Untertitel / Beschreibung -->
+                <p class="text-base sm:text-lg text-brand-800/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                    Herzlich willkommen! Hier treffen tiefe Lebensfragen auf feine Kaffeekultur, moderne Technologie und lebensnahe Impulse. Ohne erhobenen Zeigefinger, aber mit viel Herz und Raum für deine eigenen Gedanken.
+                </p>
+
+                <!-- Call to Actions -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#impulse" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-brand-500/25 flex items-center justify-center space-x-3 text-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Segen & Impuls testen</span>
+                    </a>
+                    <a href="#lifestyle" class="w-full sm:w-auto bg-white hover:bg-brand-100 text-brand-900 border border-brand-200 font-semibold px-8 py-4 rounded-full transition-colors flex items-center justify-center space-x-2 text-sm shadow-sm">
+                        <i class="fa-solid fa-newspaper text-brand-500"></i>
+                        <span>Stories lesen</span>
+                    </a>
+                </div>
+
+                <!-- Vertrauens-Elemente / Key-Facts -->
+                <div class="pt-6 border-t border-brand-200/60 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
+                    <div>
+                        <div class="font-serif text-xl font-bold text-brand-900">100%</div>
+                        <div class="text-xs text-brand-700/80">Niedrigschwellig</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-xl font-bold text-brand-900">24/7</div>
+                        <div class="text-xs text-brand-700/80">Digitale Segen</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-xl font-bold text-brand-900">Anonym</div>
+                        <div class="text-xs text-brand-700/80">Frage-Funktion</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hero Bild Spalte mit stilvollem Overlay & Card -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    
+                    <!-- Deko Hintergrund-Glow -->
+                    <div class="absolute -top-6 -left-6 w-72 h-72 bg-brand-300/30 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-6 -right-6 w-72 h-72 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <!-- Hauptbild-Container -->
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-brand-200">
+                        <!-- HIER DEIN EIGENES BILD EINSETZEN (z.B. ein sympathisches Portrait im Freien oder im Café) -->
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Pfarrer Manuel Portrait" 
+                             class="w-full h-full object-cover">
+                        
+                        <!-- Farb-Gradient Overlay für bessere Lesbarkeit -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-brand-900/10 to-transparent"></div>
+
+                        <!-- Schwebe-Quote-Card unten im Bild -->
+                        <div class="absolute bottom-6 left-6 right-6 p-5 glass-panel rounded-2xl border border-white/60 shadow-lg">
+                            <div class="flex items-start space-x-3">
+                                <div class="p-2 bg-brand-500 text-white rounded-lg text-sm shrink-0">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                </div>
+                                <div>
+                                    <p class="font-serif italic text-xs sm:text-sm text-brand-900 font-medium leading-snug">
+                                        "Glaube ist kein Regelwerk, sondern eine Beziehungsanfrage an das Leben."
+                                    </p>
+                                    <span class="text-[10px] text-brand-700 font-bold uppercase tracking-wider block mt-1.5">— Pfr. Manuel</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 3. MAIN MINI-PROGRAMM: "SEGEN- & IMPULS-GENERATOR" (Nahtlos integriert) -->
+    <!-- ========================================================================= -->
+    <section id="impulse" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-20">
+        
+        <!-- Haupt-Tool Container (Karten-Stil ohne Frame) -->
+        <div class="gradient-canvas text-white rounded-3xl p-6 sm:p-10 md:p-14 glow-effect relative overflow-hidden border border-brand-800">
+            
+            <!-- Dekorative Hintergrund-Lichter im Canvas -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-indigoAcc-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto text-center space-y-8">
+                
+                <!-- Tool Header Badge -->
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-brand-200 text-xs font-semibold border border-white/10">
+                    <i class="fa-solid fa-wand-magic-sparkles text-brand-400"></i>
+                    <span>Miniprogramm 01 • Interaktiver Tages-Impuls</span>
+                </div>
+
+                <!-- Titel des Tools -->
+                <div class="space-y-2">
+                    <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+                        Dein digitaler Segen für den Moment
+                    </h2>
+                    <p class="text-brand-200/80 text-sm sm:text-base max-w-xl mx-auto font-light">
+                        Wähle dein aktuelles Lebensgefühl oder Anliegen und erhalte einen persönlich abgestimmten Zuspruch mit Bibel-Bezug und Alltagsgedanken.
+                    </p>
+                </div>
+
+                <!-- KATEGORIE-FILTER (Buttons) -->
+                <div class="space-y-2">
+                    <span class="text-xs text-brand-300 uppercase tracking-widest font-semibold block mb-2">1. Wähle deine Stimmung:</span>
+                    <div class="flex flex-wrap justify-center gap-2 sm:gap-3" id="categoryButtons">
+                        <button onclick="setCategory('gelassenheit')" class="cat-btn bg-white/10 hover:bg-white/20 active:bg-brand-500 text-white text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl transition-all border border-white/10 flex items-center space-x-2">
+                            <span>🧘 Gelassenheit</span>
+                        </button>
+                        <button onclick="setCategory('neuanfang')" class="cat-btn bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl transition-all border border-white/10 flex items-center space-x-2">
+                            <span>🌱 Neuanfang</span>
+                        </button>
+                        <button onclick="setCategory('trost')" class="cat-btn bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl transition-all border border-white/10 flex items-center space-x-2">
+                            <span>🩹 Trost & Halt</span>
+                        </button>
+                        <button onclick="setCategory('dankbarkeit')" class="cat-btn bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl transition-all border border-white/10 flex items-center space-x-2">
+                            <span>☀️ Dankbarkeit</span>
+                        </button>
+                        <button onclick="setCategory('fokus')" class="cat-btn bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl transition-all border border-white/10 flex items-center space-x-2">
+                            <span>🎯 Fokus & Klarheit</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- DYNAMISCHES AUSGABE-FELD (GECARDET) -->
+                <div id="outputContainer" class="p-6 sm:p-8 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/15 text-left relative min-h-[200px] flex flex-col justify-between transition-all duration-300 fade-transition shadow-inner">
+                    
+                    <div>
+                        <!-- Kategorie Label -->
+                        <div class="flex items-center justify-between mb-3">
+                            <span id="outputCategory" class="text-xs uppercase tracking-widest text-brand-400 font-bold">
+                                Gelassenheit & Frieden
+                            </span>
+                            <span class="text-[10px] bg-white/10 text-brand-200 px-2.5 py-1 rounded-md">
+                                Pfarrer Manuel Impuls
+                            </span>
+                        </div>
+
+                        <!-- Zitat & Segenstext -->
+                        <p id="outputText" class="font-serif text-lg sm:text-2xl text-brand-100 leading-relaxed italic">
+                            "Atme tief durch. Du musst die Welt heute nicht in diesem einen Moment vollkommen machen. Lass los, was dich beschwert."
+                        </p>
+
+                        <!-- Bibelstelle / Referenz -->
+                        <p id="outputSource" class="text-xs sm:text-sm text-brand-300/80 mt-3 font-medium">
+                            — Inspirationsimpuls zu Matthäus 6,34
+                        </p>
+                    </div>
+
+                    <!-- Footer-Aktionen innerhalb der Card (Kopieren & Teilen) -->
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-xs text-brand-300/60 hidden sm:inline">
+                            Aktiv teilen & Hoffnung weitergeben
+                        </span>
+                        
+                        <div class="flex items-center space-x-3 w-full sm:w-auto justify-end">
+                            <!-- Kopieren Button -->
+                            <button onclick="copyImpulse()" class="bg-white/10 hover:bg-white/20 text-white text-xs px-4 py-2 rounded-lg transition-colors flex items-center space-x-2 border border-white/10" title="Text kopieren">
+                                <i class="fa-regular fa-copy text-sm"></i>
+                                <span>Kopieren</span>
+                            </button>
+
+                            <!-- Web Share API Button -->
+                            <button onclick="shareImpulse()" class="bg-brand-500 hover:bg-brand-600 text-white text-xs px-4 py-2 rounded-lg transition-colors flex items-center space-x-2 font-medium" title="Segen teilen">
+                                <i class="fa-solid fa-share-nodes text-sm"></i>
+                                <span>Teilen</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neugenerierungs-Button -->
+                <div class="pt-2">
+                    <button id="generateBtn" onclick="generateNewImpulse()" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-400 text-brand-900 font-bold px-10 py-4 rounded-xl transition-all shadow-xl hover:shadow-brand-500/30 active:scale-95 flex items-center justify-center space-x-3 mx-auto text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-arrows-rotate text-base"></i>
+                        <span>Nächsten Impuls laden</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 4. GALERIE WEITERER MINIPROGRAMME (Platzhalter & Vorschau-Grid) -->
+    <!-- ========================================================================= -->
+    <section id="gadgets" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span class="text-xs uppercase tracking-widest text-brand-500 font-bold bg-brand-100 px-3 py-1 rounded-full">
+                Interaktive Helfer
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900">
+                Kleine Miniprogramme für deinen Alltag
+            </h2>
+            <p class="text-brand-800/70 text-sm sm:text-base">
+                Digitale Tools, die dir helfen, deine Gedanken zu ordnen, Innehalten zu üben und den Kopf frei zu bekommen.
+            </p>
+        </div>
+
+        <!-- Grid mit 3 weiteren Miniprogrammen -->
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- Tool 2: Sorgen-Konverter (Interaktiver Live-Demonstrator) -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-brand-200/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrows-spin"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600">Interaktiver Prototyp</span>
+                        <h3 class="font-serif text-xl font-bold text-brand-900 mt-1">Der Sorgen-Konverter</h3>
+                    </div>
+                    <p class="text-brand-800/70 text-xs sm:text-sm leading-relaxed">
+                        Schreibe eine Sorge auf und wandle sie in eine konkrete, umsetzbare Gebetsbitte oder Handlungsperspektive um.
+                    </p>
+                    
+                    <!-- Miniformular im Kasten -->
+                    <div class="space-y-2 pt-2">
+                        <input type="text" id="sorgenInput" placeholder="Was beschäftigt dich gerade?" class="w-full text-xs p-3 rounded-xl border border-brand-200 bg-brand-50 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <button onclick="convertSorge()" class="w-full bg-brand-900 hover:bg-brand-500 text-white text-xs font-semibold py-2.5 rounded-xl transition-colors">
+                            Sorge umwandeln &rarr;
+                        </button>
+                    </div>
+                    
+                    <div id="sorgenOutput" class="hidden text-xs p-3 bg-amber-50 text-amber-900 rounded-xl border border-amber-200 italic">
+                        <!-- Wird via JS befüllt -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 3: Digitales Fasten Dashboard -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-brand-200/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600">Demnächst Verfügbar</span>
+                        <h3 class="font-serif text-xl font-bold text-brand-900 mt-1">Digital Fasten Dashboard</h3>
+                    </div>
+                    <p class="text-brand-800/70 text-xs sm:text-sm leading-relaxed">
+                        Ein visueller Begleiter für 7 Tage Smartphone-Detox und bewusste Offline-Momente mit täglichen Gedankenanstößen.
+                    </p>
+                    
+                    <div class="p-4 bg-brand-50 rounded-2xl border border-brand-100 space-y-2">
+                        <div class="flex justify-between text-xs font-bold text-brand-800">
+                            <span>Tagesfortschritt</span>
+                            <span>4/7 Tage</span>
+                        </div>
+                        <div class="w-full bg-brand-200 rounded-full h-2">
+                            <div class="bg-indigo-500 h-2 rounded-full w-4/7"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="showToast('Das Fasten-Dashboard erscheint in Kürze!')" class="mt-6 w-full text-center text-xs font-bold text-brand-500 hover:text-brand-900 pt-2 border-t border-brand-100">
+                    Benachrichtigen lassen &rarr;
+                </button>
+            </div>
+
+            <!-- Tool 4: Kaffee & Innehalten Timer -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-brand-200/80 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-rose-600">Demnächst Verfügbar</span>
+                        <h3 class="font-serif text-xl font-bold text-brand-900 mt-1">Espresso & Gebet Timer</h3>
+                    </div>
+                    <p class="text-brand-800/70 text-xs sm:text-sm leading-relaxed">
+                        Genau 3 Minuten Ruhe, während dein Kaffee aufbrüht. Mit geführter Stille-Sequenz für die kleine Pause zwischendurch.
+                    </p>
+
+                    <div class="p-4 bg-rose-50/50 rounded-2xl border border-rose-100 text-center">
+                        <span class="font-serif text-2xl font-bold text-rose-900">03:00 Min</span>
+                        <p class="text-[10px] text-rose-700 mt-0.5">Fokus auf Atem & Achtsamkeit</p>
+                    </div>
+                </div>
+
+                <button onclick="showToast('Der Kaffee-Timer ist bald bereit!')" class="mt-6 w-full text-center text-xs font-bold text-brand-500 hover:text-brand-900 pt-2 border-t border-brand-100">
+                    Mehr erfahren &rarr;
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 5. LIFESTYLE & MAGAZIN SECTION -->
+    <!-- ========================================================================= -->
+    <section id="lifestyle" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
+        
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div class="space-y-2">
+                <span class="text-xs uppercase tracking-widest text-brand-500 font-bold bg-brand-100 px-3 py-1 rounded-full">
+                    Magazin & Kolumne
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-900">
+                    Glaube, Alltag & Lebensart
+                </h2>
+            </div>
+            <p class="text-brand-800/70 text-sm max-w-md mt-4 md:mt-0">
+                Kurze Denkanstöße über die Kunst des guten Lebens, Popkultur und feine Zwischentöne.
+            </p>
+        </div>
+
+        <!-- Magazin Grid (3 Artikel-Karten) -->
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- Artikel 1 -->
+            <article class="bg-white rounded-3xl overflow-hidden border border-brand-200/80 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+                <div>
+                    <!-- Artikel Bild -->
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" 
+                             alt="Espresso Kaffeebohnen" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-brand-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                            Glaube & Espresso
+                        </span>
+                    </div>
+                    <!-- Content -->
+                    <div class="p-6 space-y-3">
+                        <span class="text-[11px] text-brand-500 font-medium">5 Min. Lesezeit</span>
+                        <h3 class="font-serif text-xl font-bold text-brand-900 group-hover:text-brand-500 transition-colors leading-snug">
+                            Warum die besten theologischen Gespräche am Kaffeetisch entstehen
+                        </h3>
+                        <p class="text-brand-800/70 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                            Über echte Gastfreundschaft, aktives Zuhören und die Frage, warum Jesus in der heutigen Zeit vermutlich in ein Specialty Coffee Shop gegangen wäre.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0">
+                    <button onclick="showToast('Artikel wird geladen... (Hier Link zu deiner Detailseite)')" class="text-xs font-bold text-brand-900 hover:text-brand-500 flex items-center space-x-2">
+                        <span>Artikel lesen</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Artikel 2 -->
+            <article class="bg-white rounded-3xl overflow-hidden border border-brand-200/80 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+                <div>
+                    <!-- Artikel Bild -->
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" 
+                             alt="Stille Natur" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-brand-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                            Achtsamkeit
+                        </span>
+                    </div>
+                    <!-- Content -->
+                    <div class="p-6 space-y-3">
+                        <span class="text-[11px] text-brand-500 font-medium">4 Min. Lesezeit</span>
+                        <h3 class="font-serif text-xl font-bold text-brand-900 group-hover:text-brand-500 transition-colors leading-snug">
+                            Der Sonntag als heilige Smartphone-freie Zone
+                        </h3>
+                        <p class="text-brand-800/70 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                            Wie der uralte Begriff der Sabbat-Ruhe in einer ständig erreichbaren Welt zur kraftvollsten Form der modernen Selbstfürsorge wird.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0">
+                    <button onclick="showToast('Artikel wird geladen... (Hier Link zu deiner Detailseite)')" class="text-xs font-bold text-brand-900 hover:text-brand-500 flex items-center space-x-2">
+                        <span>Artikel lesen</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Artikel 3 -->
+            <article class="bg-white rounded-3xl overflow-hidden border border-brand-200/80 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between">
+                <div>
+                    <!-- Artikel Bild -->
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" 
+                             alt="Kopfhörer & Musik" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-brand-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                            Musik & Kultur
+                        </span>
+                    </div>
+                    <!-- Content -->
+                    <div class="p-6 space-y-3">
+                        <span class="text-[11px] text-brand-500 font-medium">Spotify Playlist</span>
+                        <h3 class="font-serif text-xl font-bold text-brand-900 group-hover:text-brand-500 transition-colors leading-snug">
+                            Soundtracks für Suchende: Meine Monats-Playlist
+                        </h3>
+                        <p class="text-brand-800/70 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                            Von feinem Indie-Folk bis zu modernen Cello-Klängen: Lieder, die Räume öffnen und die Seele durchatmen lassen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0">
+                    <button onclick="showToast('Öffne Spotify Playlist...')" class="text-xs font-bold text-brand-900 hover:text-brand-500 flex items-center space-x-2">
+                        <span>Auf Spotify anhören</span>
+                        <i class="fa-brands fa-spotify text-brand-500"></i>
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 6. ANONYME FRAGE-BOX & COMMUNITY Q&A -->
+    <!-- ========================================================================= -->
+    <section id="community" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-20">
+        
+        <div class="bg-brand-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl border border-brand-800">
+            
+            <!-- Hintergrund Deko -->
+            <div class="absolute top-0 right-0 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-center relative z-10">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <span class="text-xs uppercase tracking-widest text-brand-400 font-bold bg-white/10 px-3 py-1 rounded-full inline-block">
+                        Community & Dialog
+                    </span>
+                    <h2 class="font-serif text-3xl font-bold leading-tight">
+                        Eine Frage, die dich beschäftigt?
+                    </h2>
+                    <p class="text-brand-200/80 text-xs sm:text-sm leading-relaxed">
+                        Stelle mir vollkommen anonym deine Frage zu Glaube, Zweifel, Partnerschaft oder Lebensführung. Ich beantworte ausgewählte Fragen in meinen kurzen Impulsen.
+                    </p>
+                </div>
+
+                <div class="md:col-span-7 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+                    <form id="questionForm" onsubmit="handleQuestionSubmit(event)" class="space-y-4">
+                        <div>
+                            <label for="userQuestion" class="block text-xs font-medium text-brand-200 mb-1">
+                                Deine vertrauliche Frage:
+                            </label>
+                            <textarea id="userQuestion" rows="3" required placeholder="z.B. Wie gehe ich mit Zweifeln um? Oder: Was sagt die Kirche zu...?" class="w-full text-xs p-3.5 rounded-xl bg-white/10 border border-white/15 text-white placeholder-brand-300/50 focus:outline-none focus:ring-2 focus:ring-brand-400 transition-all"></textarea>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] text-brand-300/70">
+                                <i class="fa-solid fa-lock text-brand-400 mr-1"></i> 100% Anonym & Ohne Speicherung
+                            </span>
+                            <button type="submit" class="bg-brand-500 hover:bg-brand-400 text-brand-900 font-bold px-6 py-2.5 rounded-xl text-xs transition-all shadow-md">
+                                Absenden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 7. ÜBER MICH & PERSÖNLICHER CONTEXT -->
+    <!-- ========================================================================= -->
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-mt-20">
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-brand-200/80 shadow-sm grid md:grid-cols-12 gap-8 items-center">
+            
+            <div class="md:col-span-4">
+                <div class="rounded-2xl overflow-hidden aspect-square bg-brand-100 border border-brand-200">
+                    <!-- HIER DEIN PORTRAIT-BILD ODER LIFESTYLE BILD -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
+                         alt="Pfarrer Manuel Portrait" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="md:col-span-8 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-brand-500 font-bold">
+                    Über Mich
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-900">
+                    Hallo, ich bin Manuel. Pfarrer & Netzgänger.
+                </h2>
+                <p class="text-brand-800/80 text-xs sm:text-sm leading-relaxed">
+                    Ich bin evangelischer Theologe und begeistert von der Idee, alten Segensworten und zeitlosen Glaubensfragen einen frischen, modernen Raum zu geben. Wenn ich nicht gerade Predigten schreibe oder mich mit digitalen Miniprogrammen beschäftige, findest du mich bei einer guten Tasse Filterkaffee oder auf dem Rennrad.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#community" class="inline-flex items-center space-x-2 text-xs font-bold text-brand-500 hover:text-brand-900 transition-colors">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Kontakt aufnehmen</span>
+                    </a>
+                    <a href="#" onclick="showToast('Instagram Profil folgt!')" class="inline-flex items-center space-x-2 text-xs font-bold text-brand-500 hover:text-brand-900 transition-colors">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Auf Instagram folgen</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 8. NEWSLETTER / IMPULS-ABO SECTION -->
+    <!-- ========================================================================= -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="bg-brand-100 rounded-3xl p-8 sm:p-10 border border-brand-200/80 text-center space-y-4">
+            <h3 class="font-serif text-2xl font-bold text-brand-900">
+                Sonntags-Impuls im Postfach
+            </h3>
+            <p class="text-brand-800/70 text-xs sm:text-sm max-w-md mx-auto">
+                Ein kurzer Gedanke für die neue Woche, ein Buchtipp und die neuesten Miniprogramme. Einmal pro Woche, garantiert werbefrei.
+            </p>
+            <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row max-w-md mx-auto gap-2 pt-2">
+                <input type="email" required placeholder="Deine E-Mail-Adresse" class="w-full text-xs p-3.5 rounded-xl border border-brand-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+                <button type="submit" class="bg-brand-900 hover:bg-brand-500 text-white font-semibold text-xs px-6 py-3.5 rounded-xl transition-all shrink-0">
+                    Kostenlos abonnieren
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 9. FOOTER -->
+    <!-- ========================================================================= -->
+    <footer class="bg-brand-900 text-brand-200 py-12 px-4 sm:px-6 lg:px-8 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-brand-800/60">
+            
+            <div class="space-y-3 md:col-span-2">
+                <div class="font-serif text-2xl font-bold text-white">
+                    Pfarrer Manuel<span class="text-brand-500">.</span>
+                </div>
+                <p class="text-xs text-brand-300/70 max-w-sm leading-relaxed">
+                    Evangelische Spiritualität, digitale Inspiration & Alltagskultur im Dialog.
+                </p>
+            </div>
+
+            <div class="space-y-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-white block">Navigation</span>
+                <ul class="space-y-1.5 text-xs text-brand-300">
+                    <li><a href="#impulse" class="hover:text-white transition-colors">Segen-Generator</a></li>
+                    <li><a href="#gadgets" class="hover:text-white transition-colors">Miniprogramme</a></li>
+                    <li><a href="#lifestyle" class="hover:text-white transition-colors">Magazin</a></li>
+                    <li><a href="#community" class="hover:text-white transition-colors">Frage-Box</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-white block">Rechtliches & Social</span>
+                <ul class="space-y-1.5 text-xs text-brand-300">
+                    <!-- ANPASSEN: Verlinkung zu Impressum und Datenschutz -->
+                    <li><a href="#" onclick="showToast('Hier dein Impressum verlinken')" class="hover:text-white transition-colors">Impressum</a></li>
+                    <li><a href="#" onclick="showToast('Hier deine Datenschutzerklärung verlinken')" class="hover:text-white transition-colors">Datenschutz</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Spotify</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-brand-400 space-y-2 sm:space-y-0">
+            <span>&copy; <script>document.write(new Date().getFullYear())</script> Pfarrer Manuel. Alle Rechte vorbehalten.</span>
+            <span>Entwickelt für GitHub Pages & Vercel</span>
+        </div>
+    </footer>
+
+
+    <!-- ========================================================================= -->
+    <!-- 10. JAVASCRIPT LOGIK & DATENBANK -->
+    <!-- ========================================================================= -->
+    <script>
+        // ---------------------------------------------------------------------
+        // DATENBANK FÜR DEN SEGEN- GENERATOR (Hier neue Sprüche/Bibelstellen einfügen)
+        // ---------------------------------------------------------------------
+        const impulseDatabase = {
+            gelassenheit: [
+                {
+                    text: "Atme tief durch. Du musst die Welt heute nicht in diesem einen Moment vollkommen machen. Lass los, was dich beschwert.",
+                    source: "Inspirationsimpuls zu Matthäus 6,34"
+                },
+                {
+                    text: "Gott hat dir nicht einen Geist der Furcht gegeben, sondern der Kraft, der Liebe und der Besonnenheit.",
+                    source: "2. Timotheus 1,7"
+                },
+                {
+                    text: "Frieden beginnt in dem Augenblick, in dem du aufhörst, die Kontrolle über alles erzwingen zu wollen.",
+                    source: "Tagessegen • Pfarrer Manuel"
+                }
+            ],
+            neuanfang: [
+                {
+                    text: "Siehe, ich mache alles neu! Auch die Wege in deiner Wüste und Ströme in der Einöde.",
+                    source: "Jesaja 43,19"
+                },
+                {
+                    text: "Gestern ist vergangen. Heute schenkt dir das Leben eine frische, unbeschriebene Seite. Schreibe sie mit Zuversicht.",
+                    source: "Impuls zum Morgen"
+                },
+                {
+                    text: "Fehler sind keine Endstationen, sondern Umleitungen zu besserer Erkenntnis. Sei barmherzig mit dir selbst.",
+                    source: "Lebensgedanke • Pfarrer Manuel"
+                }
+            ],
+            trost: [
+                {
+                    text: "Der Herr ist nahe denen, die zerbrochenen Herzens sind, und hilft denen, die ein zerschlagenes Gemüt haben.",
+                    source: "Psalm 34,19"
+                },
+                {
+                    text: "Du musst in dunklen Stunden nicht stark wirken. Es reicht aus, da zu sein und zu wissen, dass du gehalten wirst.",
+                    source: "Trost-Zuspruch"
+                },
+                {
+                    text: "Keine Träne, die du weinst, ist umsonst. Deine Trauer hat ihren Raum, und das Licht kehrt leise zurück.",
+                    source: "Tagesimpuls"
+                }
+            ],
+            dankbarkeit: [
+                {
+                    text: "Dies ist der Tag, den der Herr macht; lasst uns freuen und fröhlich an ihm sein!",
+                    source: "Psalm 118,24"
+                },
+                {
+                    text: "Dankbarkeit verändert die Perspektive: Sie verwandelt das, was wir haben, in mehr als genug.",
+                    source: "Alltagsphilosophie"
+                },
+                {
+                    text: "Achte heute auf die kleinen Geschenke: einen warmen Kaffeeduft, ein ehrliches Lächeln, einen Sonnenstrahl.",
+                    source: "Dankbarkeits-Segen"
+                }
+            ],
+            fokus: [
+                {
+                    text: "Richte deine Schritte aus auf das, was wahrhaft zählt. Lass dich nicht von der Hektik fremder Erwartungen treiben.",
+                    source: "Fokus-Impuls"
+                },
+                {
+                    text: "Dein Wort ist meines Fußes Leuchte und ein Licht auf meinem Wege.",
+                    source: "Psalm 119,105"
+                },
+                {
+                    text: "Klarheit entsteht nicht im Kopf, sondern beim ersten konkreten Schritt des Gehorsams und des Vertrauens.",
+                    source: "Tagesgedanke"
+                }
+            ]
+        };
+
+        // Aktuelle Zustandsspeicher
+        let activeCategory = 'gelassenheit';
+        let currentQuoteIndex = 0;
+
+        // Kategorie auswählen
+        function setCategory(category) {
+            activeCategory = category;
+
+            // Visual State der Buttons anpassen
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-500');
+                btn.classList.add('bg-white/10');
+            });
+            event.currentTarget.classList.remove('bg-white/10');
+            event.currentTarget.classList.add('bg-brand-500');
+
+            generateNewImpulse();
+        }
+
+        // Neuen Impuls mit Übergang generieren
+        function generateNewImpulse() {
+            const container = document.getElementById('outputContainer');
+            const outputText = document.getElementById('outputText');
+            const outputSource = document.getElementById('outputSource');
+            const outputCategory = document.getElementById('outputCategory');
+
+            // Fade-Out Animation
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(6px)';
+
+            setTimeout(() => {
+                const quotes = impulseDatabase[activeCategory];
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                const selected = quotes[randomIndex];
+
+                outputText.innerText = `"${selected.text}"`;
+                outputSource.innerText = `— ${selected.source}`;
+                
+                const categoryTitles = {
+                    gelassenheit: '🧘 Gelassenheit & Frieden',
+                    neuanfang: '🌱 Neuanfang & Hoffnung',
+                    trost: '🩹 Trost & Halt',
+                    dankbarkeit: '☀️ Dankbarkeit & Freude',
+                    fokus: '🎯 Fokus & Klarheit'
+                };
+                outputCategory.innerText = categoryTitles[activeCategory];
+
+                // Fade-In Animation
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 200);
+        }
+
+        // Impuls in die Zwischenablage kopieren
+        function copyImpulse() {
+            const text = document.getElementById('outputText').innerText;
+            const source = document.getElementById('outputSource').innerText;
+            const fullText = `${text} ${source} (via Pfarrer Manuel Website)`;
+
+            const tempInput = document.createElement('textarea');
+            tempInput.value = fullText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast('Segen erfolgreich kopiert!');
+        }
+
+        // Teilen über Web Share API (Mobile native teilen)
+        function shareImpulse() {
+            const text = document.getElementById('outputText').innerText;
+            const source = document.getElementById('outputSource').innerText;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Ein digitaler Segen für dich',
+                    text: `${text} ${source}`,
+                    url: window.location.href,
+                }).catch(() => {
+                    copyImpulse();
+                });
+            } else {
+                copyImpulse();
+            }
+        }
+
+        // Sorgen-Konverter Miniprogramm Vorschau-Funktion
+        function convertSorge() {
+            const input = document.getElementById('sorgenInput').value.trim();
+            const output = document.getElementById('sorgenOutput');
+
+            if (!input) {
+                showToast('Bitte gib zuerst eine Sorge ein!');
+                return;
+            }
+
+            output.classList.remove('hidden');
+            output.innerHTML = `<strong>Umgewandelter Impuls:</strong> "Gott, ich übergebe dir meine Sorge bezüglich '${input}'. Schenke mir heute die Kraft für den nächsten kleinen Schritt und schenke meinem Herzen Frieden."`;
+            document.getElementById('sorgenInput').value = '';
+        }
+
+        // Fragen-Formular Handler
+        function handleQuestionSubmit(e) {
+            e.preventDefault();
+            document.getElementById('userQuestion').value = '';
+            showToast('Deine Frage wurde vertraulich übermittelt. Danke!');
+        }
+
+        // Newsletter Formular Handler
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast('Vielen Dank für dein Abonnement!');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Universelle Toast-Benachrichtigung (Statt alert())
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-6 right-6 bg-brand-900 text-white text-xs font-semibold px-5 py-3 rounded-2xl shadow-2xl z-50 transition-all duration-300 border border-brand-700 flex items-center space-x-2';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-brand-400 text-sm"></i><span>${message}</span>`;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+
+        // Beim ersten Laden direkt den ersten Impuls anzeigen
+        window.onload = function() {
+            generateNewImpulse();
+        };
+    </script>
+</body>
+</html>
